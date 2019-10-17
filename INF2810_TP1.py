@@ -94,15 +94,50 @@ def djikstra(deb,fin,tab):
         print("Longueur= ",longueur,"\n")
     return [tab_zone, longueur]
 
+def afficherGraphe() :
+    f=open("entrepot.txt", "r")
+    x=lecture_fichier(f)
+   
+    
+    for i in range (0, len(x[0])):
+        premierElement = 1
+        print("(", i, ",", x[0][i][0], ",", x[0][i][1], ",", x[0][i][2], ",", "(", end = '')
+        for j in range (0, len(x[1])):
+            if x[1][j][0] == i:
+                print("(", x[1][j][1], ",", x[1][j][2], ")", end = '')
+                
+                premierElement = 0
+            elif x[1][j][1] == i:
+                print("(", x[1][j][0], ",", x[1][j][2], ")", end = '')
+                
+                premierElement = 0
+            
+        print("))")
+                
+    
+##    while(iterator <= 25):
+##        currentNode = x[1][iterator][0]
+##        
+##        iterator = iterator + 1
+##        nextNode = x[1][iterator][0]
+##        if currentNode != nextNode:
+##            print(currentNode)
+##        
+##        if currentNode != nextNode :
+##            objetA = x[0][iterator2][0]
+##            objetB = x[0][iterator2][1]
+##            objetC = x[0][iterator2][2]
+##            iterator2 = iterator2 + 1
+##            print(objetA, ",", objetB, ",", objetC)
+    
     
         
 f=open("entrepot.txt", "r")
 x=lecture_fichier(f)
-tableau1=x[0]
-tableau2=x[1]
-deb = int(input("quel est le point de départ? "))
-fin = int(input("quel est le point d'arrivée? "))
-aa=djikstra(deb,fin,tableau2)
+afficherGraphe()
+#deb = int(input("quel est le point de départ? "))
+#fin = int(input("quel est le point d'arrivée? "))
+#aa=djikstra(deb,fin,tableau2)
 
 
 
