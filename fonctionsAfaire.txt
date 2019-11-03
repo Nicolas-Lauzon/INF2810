@@ -1,12 +1,14 @@
-CreerGraphe() : affiche les differentes sections et les chemins les reliants
+Il faut modifier dijkstra pour prendre en compte les commandes et la separer en deux pour avoir l'option creergraphe
 
-acherGraphe() : qui permet de voir une representation du graphe sauvegarde en memoire.
 
-prendreCommande() : rentrer un nombre d'objet de chaque type
 
-afficherCommande() : permet a l'utilisateur de voir la commande en mémoire
 
-plusCourtChemin() : determine le chemin le plus rapide avec dijkstra(depart et arrivée est toujours le noeud 0). La fonctione affiche le type de root utilisé la liste des noeuds traversés, l'objet ramassé et le temps total pour toute la commande. si impossible, informer l'utilisateur.
+
+
+
+plusCourtChemin() : determine le chemin le plus rapide avec dijkstra(depart et arrivée est toujours le noeud 0). 
+La fonction affiche le type de root utilisé la liste des noeuds traversés, 
+l'objet ramassé et le temps total pour toute la commande. si impossible, informer l'utilisateur.
 
 quitter doit toujours être disponible
 

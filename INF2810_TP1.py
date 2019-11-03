@@ -1,9 +1,50 @@
 ##x="abcde"
 ##for i in range (0, len(x)):
 ##    print(x[i])
+#def calculerTemps(constante, distance):
+    #return (constante * distance)
+
+def constanteRobotX(masse):
+    return (1 + masse)
+
+def constanteRobotY(masse):
+    return (1,5 + 0,6 * masse)
+
+def constantRobotZ(masse):
+    return (2,5 + 0,2 * masse)
+
+def prendreCommande():
+    nObjetA = input("Entrez le nombre d'objets A ")
+    nObjetB = input("Entrez le nombre d'objets B ")
+    nObjetC = input("Entrez le nombre d'objets C ")
+    return [nObjetA, nObjetB, nObjetC]
+
+def afficherCommande(commande):
+    print(commande[0], commande[1], commande[2]) 
+
+def calculerMasseTotale(commande):
+    return commande[0]*1 + commande[1]*3 + commande[2]*6
 
 
 
+#def robotsVSCharge(masse, robots):
+    
+    #if (masse <= robots[0].poidsMax)
+        #return robots[
+
+class robot:
+    def __init__(self, poidsMax):
+        self.poidsMax = poidsMax
+        
+def main() :
+    robotX = robot(5)
+    robotY = robot(10)
+    robotZ = robot(25)
+    robot = [robotX, robotY, robotZ]
+
+    #if (calculerMasseTotale(prendreCommande) <= robotX.poidsMax)
+        #return robot[robotX, robotY, robotZ];
+    
 
 def lecture_fichier(f):
     tab = []
@@ -113,31 +154,42 @@ def afficherGraphe() :
                 premierElement = 0
             
         print("))")
-                
-    
-##    while(iterator <= 25):
-##        currentNode = x[1][iterator][0]
-##        
-##        iterator = iterator + 1
-##        nextNode = x[1][iterator][0]
-##        if currentNode != nextNode:
-##            print(currentNode)
-##        
-##        if currentNode != nextNode :
-##            objetA = x[0][iterator2][0]
-##            objetB = x[0][iterator2][1]
-##            objetC = x[0][iterator2][2]
-##            iterator2 = iterator2 + 1
-##            print(objetA, ",", objetB, ",", objetC)
     
     
         
-f=open("entrepot.txt", "r")
-x=lecture_fichier(f)
-afficherGraphe()
+#f=open("entrepot.txt", "r")
+#x=lecture_fichier(f)
+#afficherGraphe()
 #deb = int(input("quel est le point de départ? "))
 #fin = int(input("quel est le point d'arrivée? "))
 #aa=djikstra(deb,fin,tableau2)
+commandePrise = 0
+optionChoisie = 0
+while(optionChoisie != "6"):   
+    print("Que voulez-vous faire ? (Entrer le numero)", "\n", "1. creer le graphe", "\n", "2. afficher le graphe", "\n", "3. prendre une commande", "\n", "4. afficher la commande", "\n", "5. trouver le plus court chemin", "\n", "6. quitter")
+    optionChoisie = input()
+    if(optionChoisie == "1"):
+        print("creer graphe")
+        # il faut changer la fonction dijkstra
+    elif(optionChoisie == "2"):
+        afficherGraphe()
+    elif(optionChoisie == "3"):
+        commandePrise = 1
+        commande = prendreCommande()       
+    elif(optionChoisie == "4"):
+        if(commandePrise == 1):
+            afficherCommande(commande)
+        else:
+            print("Aucune commande n'a ete prise")
+    elif(optionChoisie == "5"):
+        print("dijstra")
+    elif(optionChoisie == "6"):
+        print("OK BYEBYE")
+    else:
+        print("Choix invalide")
+
+    
+        
 
 
 
