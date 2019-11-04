@@ -46,7 +46,7 @@ def main() :
         #return robot[robotX, robotY, robotZ];
     
 
-def lecture_fichier(f):
+def creerGraphe(f):
     tab = []
     tab2 = []
     section = 0
@@ -92,7 +92,7 @@ def trouver_min(tab):
     return index
 
 
-def djikstra(deb,fin,tab):
+def dijkstra(deb,fin,tab):
     tab_zone= []
     tab_calcul=[]
     
@@ -135,9 +135,12 @@ def djikstra(deb,fin,tab):
         print("Longueur= ",longueur,"\n")
     return [tab_zone, longueur]
 
+def choisirChemin(tab):
+    print("aa")
+
 def afficherGraphe() :
     f=open("entrepot.txt", "r")
-    x=lecture_fichier(f)
+    x=creerGraphe(f)
    
     
     for i in range (0, len(x[0])):
@@ -165,14 +168,20 @@ def afficherGraphe() :
 #aa=djikstra(deb,fin,tableau2)
 commandePrise = 0
 optionChoisie = 0
-while(optionChoisie != "6"):   
+grapheCree = 0
+fichier = open("entrepot.txt", "r")
+while(1):   
     print("Que voulez-vous faire ? (Entrer le numero)", "\n", "1. creer le graphe", "\n", "2. afficher le graphe", "\n", "3. prendre une commande", "\n", "4. afficher la commande", "\n", "5. trouver le plus court chemin", "\n", "6. quitter")
     optionChoisie = input()
     if(optionChoisie == "1"):
-        print("creer graphe")
-        # il faut changer la fonction dijkstra
+        graphe = creerGraphe(fichier)
+        grapheCree = 1
+        print("le graphe a ete cree !")
     elif(optionChoisie == "2"):
-        afficherGraphe()
+        if(grapheCree == 1):
+            afficherGraphe()
+        else:
+            print("le graphe n'a pas ete cree")
     elif(optionChoisie == "3"):
         commandePrise = 1
         commande = prendreCommande()       
@@ -182,13 +191,17 @@ while(optionChoisie != "6"):
         else:
             print("Aucune commande n'a ete prise")
     elif(optionChoisie == "5"):
-        print("dijstra")
+        if(grapheCree == 1):
+            dijkstra(0, 0, graphe)
+        else:
+            print("le graphe n'a pas ete cree")
     elif(optionChoisie == "6"):
         print("OK BYEBYE")
+        break
     else:
         print("Choix invalide")
+exit()
 
-    
         
 
 

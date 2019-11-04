@@ -7,7 +7,7 @@ Il faut modifier dijkstra pour prendre en compte les commandes et la separer en 
 
 
 plusCourtChemin() : determine le chemin le plus rapide avec dijkstra(depart et arrivée est toujours le noeud 0). 
-La fonction affiche le type de root utilisé la liste des noeuds traversés, 
+La fonction affiche le type de robot utilisé la liste des noeuds traversés, 
 l'objet ramassé et le temps total pour toute la commande. si impossible, informer l'utilisateur.
 
 quitter doit toujours être disponible
