@@ -135,8 +135,7 @@ def dijkstra(deb,fin,tab):
         print("Longueur= ",longueur,"\n")
     return [tab_zone, longueur]
 
-def choisirChemin(tab):
-    print("aa")
+
 
 def afficherGraphe() :
     f=open("entrepot.txt", "r")
@@ -171,8 +170,8 @@ optionChoisie = 0
 grapheCree = 0
 fichier = open("entrepot.txt", "r")
 while(1):   
-    print("Que voulez-vous faire ? (Entrer le numero)", "\n", "1. creer le graphe", "\n", "2. afficher le graphe", "\n", "3. prendre une commande", "\n", "4. afficher la commande", "\n", "5. trouver le plus court chemin", "\n", "6. quitter")
-    optionChoisie = input()
+    optionChoisie=input("Que voulez-vous faire ? (Entrer le numero)\n 1. creer le graphe \n 2. afficher le graphe \n 3. prendre une commande \n 4. afficher la commande \n 5. trouver le plus court chemin \n 6. quitter \n")
+    #optionChoisie = input()
     if(optionChoisie == "1"):
         graphe = creerGraphe(fichier)
         grapheCree = 1
@@ -196,13 +195,16 @@ while(1):
         else:
             print("le graphe n'a pas ete cree")
     elif(optionChoisie == "6"):
-        print("OK BYEBYE")
+        
         break
     else:
         print("Choix invalide")
-exit()
 
-        
+
+while (1):
+    fini= input("OK BYEBYE: appuyer sur entrer pour fermer")
+    if (fini == ""):
+        break
 
 
 
