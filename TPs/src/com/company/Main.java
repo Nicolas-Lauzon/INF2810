@@ -19,7 +19,10 @@ public class Main {
         String fileName = "./inventaire.txt";
         inventory.createInventory(fileName);
 
-        ArrayList<Objet> result = inventory.filter("", "", 'C');
+        ArrayList<Objet> result = inventory.filter("ami", "", 'B');
+
+        inventory.getNameTree().deleteInAutomate("ami", result.get(0));
+        inventory.getTypeTree().deleteInTypeAutomate('B', result.get(0));
 
     }
 }

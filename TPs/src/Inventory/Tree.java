@@ -59,7 +59,7 @@ public class Tree {
         return this.root.getChild().get(type).getObjets();
     }
 
-    public void delete(String word, Objet objet){
+    public void deleteInAutomate(String word, Objet objet){
         delete(this.root, word, 0, objet);
     }
 
@@ -81,6 +81,7 @@ public class Tree {
         if (shouldDeleteCurrentNode) {
             if(current.getChild().get(ch).getObjets().size() > 1){
                 current.getChild().get(ch).getObjets().remove(objet);
+                current.getChild().get(ch).setTerminal(true);
                 return false;       //child is not empty
             } else{
                 current.getChild().remove(ch);
@@ -88,6 +89,15 @@ public class Tree {
             }
         }
         return false;
+    }
+
+    public void deleteInTypeAutomate(Character type, Objet objet){
+        Node node = this.root.getChild().get(type);
+        if(node.getObjets().size() > 1) {
+            node.getObjets().remove(objet);
+        } else{
+            this.root.getChild().remove(type);
+        }
     }
 
 }

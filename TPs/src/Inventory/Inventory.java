@@ -15,6 +15,18 @@ public class Inventory {
         this.typeTree = typeTree;
     }
 
+    public Tree getNameTree(){
+        return this.nameTree;
+    }
+
+    public Tree getCodeTree(){
+        return this.codeTree;
+    }
+
+    public Tree getTypeTree(){
+        return this.typeTree;
+    }
+
     public void createInventory(String fileName){
 
         File file = new File(fileName);
