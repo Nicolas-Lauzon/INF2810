@@ -1,0 +1,9 @@
+Comment exécuter le projet:
+
+1. Le projet doit être ouvert dans Intellij
+2. Le niveau de language du prohet doit être au niveau : 8-Lambdas, type annotations etc.
+3. La sortie du compilateur pour le projet doit pointer sur le dossier out.
+4. Dans la section module dans Project Structure, le dossier src doit être mis comme source dans Project Structure et le dossier out doit être mis comme ignoré.
+5. une configuration doit être créé: le type est application, la Main class se trouve sous src\GUI\Main
+
+Une fois la configuration complète, le projet est prêt à être exécuter
